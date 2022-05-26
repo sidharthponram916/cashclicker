@@ -11,6 +11,9 @@
    export default { 
         components: { 
             Navbar
+        }, 
+        async mounted() { 
+          console.log(this.$store.state.loggedIn); 
         }
    }
 </script> 

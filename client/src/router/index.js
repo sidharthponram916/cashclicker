@@ -10,7 +10,26 @@ const routes = [
     name: 'Intro',
     component: Home
   },
+  { 
+    path: '/signup', 
+    name: "SignUp", 
+    component:() => import("../views/auth/SignUp.vue")
+  }, 
+  { 
+    path: "/login", 
+    name: "Log In", 
+    component: () => import("../views/auth/LogIn.vue")
+  }, 
+  { 
+    path: "/game/home", 
+    name: "Home", 
+    component: () => import('../views/game/Home.vue'), 
+    meta: { 
+      authProtected: true
+   }
+  }
 ]
+
 
 const router = new VueRouter({
   mode: 'history',
