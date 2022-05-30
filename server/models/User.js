@@ -37,8 +37,8 @@ const userSchema = new Schema({
 
 
 
-userSchema.methods.generateToken = () => { 
-     return jwt.sign({id: this._id}, process.env.JWT_KEY); 
+userSchema.methods.generateToken = function () { 
+     return jwt.sign({ id: `${this._id}` }, process.env.JWT_KEY); 
 }
 
 userSchema.methods.verifyPassword = async (pwd) => { 

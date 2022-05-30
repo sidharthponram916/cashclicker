@@ -29,7 +29,6 @@ module.exports = {
             const user = await User.findOne({ username: req.body.username}); 
 
      // Rewrite Auth System later. 
-            console.log(user);
             
             const verified = await bcrypt.compare(req.body.password , user.password); 
    
@@ -49,10 +48,30 @@ module.exports = {
          const user = await User.findById(req.user._id); 
      
          res.status(200).json(user); 
-    }
+    }    
     catch (e) { 
         console.log({ error: e.message})
         res.status(500).json({ error: e.message});
     }
+   }, 
+   async updateData(req,res) { 
+        try { 
+           const user = await User.findByIdAndUpdate(req.user._id, req.body); 
+
+           res.status(200).json(user); 
+        }
+        catch (e) {  
+             res.status(500).json({ error: e.message}); 
+        }
+   }, 
+   async getAllData(req,res) { 
+        try {
+           const users = await User.find(); 
+           
+            res.status(200).json(users); 
+        }
+        catch (e) { 
+             res.status(500).json({ error: e.message}); 
+        }
    }
 }

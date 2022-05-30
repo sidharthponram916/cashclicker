@@ -3,21 +3,18 @@
 <div class = 'justify-center text-black items-center w-3/4 my-32 text-center mr-3'>
         <h1 class = 'text-4xl mx-2 mb-10'>Sign Up for CashClicker</h1>
 
-        <label class = 'm-2 text-3xl'> Username </label> 
         <input
            type = 'text'
            v-model = 'user.username'
            placeholder = "Make a username..."
            class = 'p-4 m-2 bg-white w-11/12'
         >
-        <label class = 'm-2 text-3xl'> Email </label> 
         <input
            type = 'email'
            v-model = 'user.email'
            placeholder = "Enter your email..."
            class = 'p-4 m-2 bg-white w-11/12'
         >
-         <label class = 'm-2 text-3xl'> Password </label> 
         <input
            type = 'password'
            v-model = 'user.password'

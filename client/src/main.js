@@ -18,7 +18,7 @@ if (localStorage.getItem('token')) {
      .catch(err => { 
          console.log(err.message); 
 
-         delete http.defaults.headers.common["Authorization"];
+       delete http.defaults.headers.common["Authorization"];
           
          localStorage.removeItem("token"); 
 
